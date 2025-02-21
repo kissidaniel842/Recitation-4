@@ -1,6 +1,5 @@
 public class Recitation4 {
 
-
     public static String explode(String word){
         StringBuilder sb = new StringBuilder();
         int duplicateValue;
@@ -18,7 +17,8 @@ public class Recitation4 {
                 sb.append(ch);
             }
         }
-
+        // Return the final result string
         return sb.toString();
     }
 }
+
