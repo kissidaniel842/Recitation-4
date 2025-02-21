@@ -1,29 +1,22 @@
 public class Recitation4 {
 
-    /**
-     * Returns a string generated from word by duplicating
-     * each letter in the string based on the character's position. Digits
-     * are duplicated by the value of their digit. Any other character
-     * considered non-alphanumeric will result in all characters being
-     * appended to the result, up to but not including the non-alphanumeric
-     * character.
-     *
-     * @param word a string that is to be exploded
-     * @return a string generated from word by duplicating
-     *        each letter in the string based on the character's position. Digits
-     *        are duplicated by the value of their digit. Any other character
-     *        considered non-alphanumeric will result in all characters being
-     *        appended to the result, up to but not including the non-alphanumeric
-     *        character
-     */
     public static String explode(String word){
         StringBuilder sb = new StringBuilder();
-
-        // TODO: replace this line with your code
-
+        int duplicateValue;
+        for(int index = 0; index < word.length(); index++){
+            char ch = word.charAt(index);
+            if (Character.isLetter(ch)){
+                duplicateValue = index+1;
+            } else if (Character.isDigit(ch)){
+                duplicateValue = Integer.parseInt(""+ch);
+            } else {
+                duplicateValue = 0;
+                sb.append(word.substring(0,index));
+            }
+            for(int count = 0; count < duplicateValue; count++){
+                sb.append(ch);
+            }
+        }
         return sb.toString();
     }
 }
-/*
-TODO: Replace this line with your algorithm
-*/
