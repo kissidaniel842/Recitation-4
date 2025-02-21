@@ -1,11 +1,12 @@
 public class Recitation4 {
 
-
     public static String explode(String word) {
         StringBuilder sb = new StringBuilder();
         int duplicateValue;
+        int index = 0;
 
-        for (int index = 0; index < word.length(); index++) {
+
+        for (; index < word.length(); index++) {
             char ch = word.charAt(index);
 
             if (Character.isLetter(ch)) {
@@ -13,8 +14,6 @@ public class Recitation4 {
             } else if (Character.isDigit(ch)) {
                 duplicateValue = Character.getNumericValue(ch);
             } else {
-                // Append the rest of the string as-is and break
-                sb.append(word.substring(index));
                 break;
             }
 
@@ -22,6 +21,8 @@ public class Recitation4 {
                 sb.append(ch);
             }
         }
+
+        sb.append(word.substring(index));
 
         return sb.toString();
     }
