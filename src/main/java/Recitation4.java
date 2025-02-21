@@ -13,7 +13,9 @@ public class Recitation4 {
             } else if (Character.isDigit(ch)) {
                 duplicateValue = Character.getNumericValue(ch);
             } else {
-                break;  // Stop processing at first non-alphanumeric character
+                // Append the rest of the string as-is and break
+                sb.append(word.substring(index));
+                break;
             }
 
             for (int count = 0; count < duplicateValue; count++) {
